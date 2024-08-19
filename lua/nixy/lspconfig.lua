@@ -34,17 +34,18 @@ local lspconfig = require("lspconfig")
 local icons = require("nixy.icons")
 
 local servers = {
-    "clangd",
-		"cmake",
-		"autotools_ls",
-		"lua_ls",
-		"tsserver",
-		"bashls",
-		"zls",
-		"rust_analyzer",
-		"gopls",
-		"texlab",
-		"marksman",
+  "clangd",
+  "cmake",
+  "autotools_ls",
+  "lua_ls",
+  "tsserver",
+  "bashls",
+  "zls",
+  "rust_analyzer",
+  "gopls",
+  "texlab",
+  "marksman",
+  "nil_ls",
 }
 
 local default_diagnostic_config = {

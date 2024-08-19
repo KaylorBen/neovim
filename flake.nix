@@ -115,6 +115,7 @@
           gopls
           texlab
           marksman
+          nil
         ];
       };
 
@@ -129,7 +130,7 @@
           nvim-lspconfig
           neodev-nvim
 
-          nvim-treesitter
+          nvim-treesitter.withAllGrammars
 
           telescope-nvim
 
@@ -198,7 +199,6 @@
         test = [ (_:[]) ];
       };
     };
-
 
 
     # And then build a package with specific categories from above here:
