@@ -122,13 +122,31 @@
       startupPlugins = {
         gitPlugins = with pkgs.neovimPlugins; [ ];
         general = with pkgs.vimPlugins; [
+          rose-pine
+
           mini-nvim
-          telescope-nvim
+
+          nvim-lspconfig
+          neodev-nvim
+
           nvim-treesitter
+
+          telescope-nvim
+
           nvim-cmp
+          cmp-nvim-lsp
+          cmp-emoji
+          cmp-buffer
+          cmp-path
+          cmp-cmdline
+          cmp-nvim-lua
+          cmp-luasnip
+          luasnip
+          friendly-snippets
+
           harpoon
+
           presence-nvim
-          which-key-nvim
         ];
       };
 
