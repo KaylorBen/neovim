@@ -1,7 +1,7 @@
 local opt = vim.opt
 
 opt.number = true
-opt.relateivenumber = true
+opt.relativenumber = true
 opt.ignorecase = true
 opt.undofile = true
 opt.cursorline = true

@@ -140,7 +140,7 @@
           cmp-path
           cmp-cmdline
           cmp-nvim-lua
-          cmp-luasnip
+          cmp_luasnip
           luasnip
           friendly-snippets
 
