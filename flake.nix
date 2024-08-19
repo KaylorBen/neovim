@@ -106,7 +106,7 @@
         general = with pkgs; [
           clang-tools
           cmake-language-server
-          autotools_ls
+          autotools-language-server
           lua-language-server
           typescript-language-server
           bash-language-server
@@ -120,7 +120,7 @@
 
       # This is for plugins that will load at startup without using packadd:
       startupPlugins = {
-        # gitPlugins = with pkgs.neovimPlugins; [ ];
+        gitPlugins = with pkgs.neovimPlugins; [ ];
         general = with pkgs.vimPlugins; [
           mini-nvim
           telescope-nvim
