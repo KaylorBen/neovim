@@ -2,11 +2,11 @@ local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true }
   local keymap = vim.api.nvim_buf_set_keymap
   keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-	keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-	keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-	keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-	keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-	keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+  keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+  keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+  keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+  keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+  keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 end
 
 local utils = {
@@ -103,3 +103,17 @@ for _, server in pairs(servers) do
 
   lspconfig[server].setup(opts)
 end
+
+-- keybinds
+local keymap = vim.keymap.set
+local opts = { noremap = true, silent = true }
+
+keymap("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts )
+keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format({async = true, filter = function(client) return client.name ~= 'typescript-tools' end})<cr>", opts )
+keymap("n", "<leader>li", "<cmd>lua LspInfo<cr>", opts )
+keymap("n", "<leader>lj", "<cmd>lua vim.diagnostic.goto_next()<cr>", opts )
+keymap("n", "<leader>lh", "<cmd>lua require('nixy.lspconfig').toggle_inlay_hints<cr>", opts )
+keymap("n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev()<cr>", opts )
+keymap("n", "<leader>ll", "<cmd>lua vim.lsp.codelens.run()<cr>", opts )
+keymap("n", "<leader>lq", "<cmd>lua vim.diagnostic.setlocllist()<cr>", opts )
+keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts )
