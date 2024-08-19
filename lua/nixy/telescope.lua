@@ -36,3 +36,32 @@ require("telescope").setup({
     },
   },
 })
+
+-- keybindings
+local keymap = vim.keymap.set
+local opts = { noremap = true, silent = true }
+
+keymap("n", "<leader>fb", "<cmd>Telescope git_branches<cr>", opts )
+keymap("n", "<leader>fc", "<cmd>Telescope colorscheme<cr>", opts )
+keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts )
+keymap("n", "<leader>fp", "<cmd>lua require('telescope').extensions.projects.projects()<cr>", opts )
+keymap("n", "<leader>ft", "<cmd>Telescope live_grep<cr>", opts )
+keymap("n", "<leader>fs", "<cmd>Telescope grep_string<cr>", opts )
+keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts )
+keymap("n", "<leader>fH", "<cmd>Telescope highlights<cr>", opts )
+keymap("n", "<leader>fi", "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", opts )
+keymap("n", "<leader>fl", "<cmd>Telescope resume<cr>", opts )
+keymap("n", "<leader>fM", "<cmd>Telescope man_pages<cr>", opts )
+keymap("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", opts )
+keymap("n", "<leader>fR", "<cmd>Telescope registers<cr>", opts )
+keymap("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", opts )
+keymap("n", "<leader>fC", "<cmd>Telescope commands<cr>", opts )
+
+keymap("n", "<leader>go", "<cmd>Telescope git_status<cr>", opts )
+keymap("n", "<leader>gb", "<cmd>Telescope git_branches<cr>", opts )
+keymap("n", "<leader>gc", "<cmd>Telescope git_commits<cr>", opts )
+keymap("n", "<leader>gC", "<cmd>Telescope git_bcommits<cr>", opts )
+keymap("n", "<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>", opts )
+keymap("n", "<leader>lS", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", opts )
+keymap("n", "<leader>le", "<cmd>Telescope quickfix<cr>", opts )
+
