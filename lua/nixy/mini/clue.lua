@@ -99,11 +99,13 @@ desc("n", "<leader>H8", "Goto file 8")
 desc("n", "<leader>H9", "Goto file 9")
 
 -- lspconfig
-desc("n", "gD", "Go to declaration")
-desc("n", "gd", "Go to definition")
-desc("n", "gI", "Go to implementation")
-desc("n", "gr", "Go to references")
-desc("n", "gl", "Open diagnostic")
+
+-- these error if bindings is not supported by lsp
+-- desc("n", "gD", "Go to declaration")
+-- desc("n", "gd", "Go to definition")
+-- desc("n", "gI", "Go to implementation")
+-- desc("n", "gr", "Go to references")
+-- desc("n", "gl", "Open diagnostic")
 
 desc("n", "<leader>la", "Code action")
 desc("n", "<leader>lf", "Format")
