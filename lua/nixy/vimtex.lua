@@ -1,7 +1,7 @@
 vim.cmd("packadd vimtex")
 vim.g.vimtex_view_method = 'zathura'
 vim.g.vimtex_compiler_latexmk = {
-  aux_dir = '',
+  aux_dir = '.cache',
   out_dir = '',
   callback = 1,
   continuous = 1,
