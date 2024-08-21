@@ -83,7 +83,7 @@
     # and
     # :help nixCats.flake.outputs.categoryDefinitions.scheme
     categoryDefinitions = { pkgs, settings, categories, name, ... }@packageDef: {
-      # to define and use a new category, simply add a new list to a set here, 
+      # to define and use a new category, simply add a new list to a set here,
       # and later, you will include categoryname = true; in the set you
       # provide when you build the package using this builder function.
       # see :help nixCats.flake.outputs.packageDefinitions for info on that section.
@@ -91,7 +91,7 @@
       # propagatedBuildInputs:
       # this section is for dependencies that should be available
       # at BUILD TIME for plugins. WILL NOT be available to PATH
-      # However, they WILL be available to the shell 
+      # However, they WILL be available to the shell
       # and neovim path when using nix develop
       propagatedBuildInputs = {
         general = with pkgs; [
@@ -155,7 +155,9 @@
       # use with packadd and an autocommand in config to achieve lazy loading
       optionalPlugins = {
         gitPlugins = with pkgs.neovimPlugins; [ ];
-        general = with pkgs.vimPlugins; [ ];
+        general = with pkgs.vimPlugins; [
+          vimtex
+        ];
       };
 
       # shared libraries to be added to LD_LIBRARY_PATH
