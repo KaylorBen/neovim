@@ -51,7 +51,7 @@ local servers = {
 local default_diagnostic_config = {
   signs = {
     active = true,
-    vlaues = {
+    values = {
         { name = "DiagnosticSignError", text = icons.diagnostics.Error },
 				{ name = "DiagnosticSignWarn", text = icons.diagnostics.Warning },
 				{ name = "DiagnosticSignHint", text = icons.diagnostics.Hint },
