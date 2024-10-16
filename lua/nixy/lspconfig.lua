@@ -38,7 +38,7 @@ local servers = {
   "cmake",
   "autotools_ls",
   "lua_ls",
-  "tsserver",
+  "ts_ls",
   "bashls",
   "zls",
   "rust_analyzer",
