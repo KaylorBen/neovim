@@ -46,6 +46,7 @@ local servers = {
   "texlab",
   "marksman",
   "nil_ls",
+  "cssls",
 }
 
 local default_diagnostic_config = {

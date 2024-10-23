@@ -116,6 +116,7 @@
           texlab
           marksman
           nil
+          vscode-langservers-extracted
         ];
       };
 
