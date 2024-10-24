@@ -125,6 +125,7 @@
         gitPlugins = with pkgs.neovimPlugins; [ ];
         general = with pkgs.vimPlugins; [
           rose-pine
+          tokyonight-nvim
 
           mini-nvim
 
