@@ -1,7 +1,7 @@
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 local opts_desc = function(desc)
-  return { noremap = true, silent = true, desc = desc }
+	return { noremap = true, silent = true, desc = desc }
 end
 
 keymap("n", "<Space>", "", opts)
