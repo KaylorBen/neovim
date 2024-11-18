@@ -45,7 +45,7 @@ local servers = {
   "gopls",
   "texlab",
   "marksman",
-  "nil_ls",
+  "nixd",
   "cssls",
 }
 
@@ -96,7 +96,7 @@ for _, server in pairs(servers) do
   end
 
   if server == "lua_ls" then
-    require("neodev").setup({})
+    require("lazydev").setup({})
   end
 
   if server == "zls" then

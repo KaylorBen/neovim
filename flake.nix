@@ -22,7 +22,9 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    nixCats.url = "github:BirdeeHub/nixCats-nvim?dir=nix";
+    nixCats.url = "github:BirdeeHub/nixCats-nvim";
+
+    treefmt-nix.url = "github:numtide/treefmt-nix";
 
     # neovim-nightly-overlay = {
     #   url = "github:nix-community/neovim-nightly-overlay";
@@ -41,7 +43,7 @@
   };
 
   # see :help nixCats.flake.outputs
-  outputs = { self, nixpkgs, nixCats, ... }@inputs: let
+  outputs = { self, nixpkgs, nixCats, treefmt-nix, ... }@inputs: let
     inherit (nixCats) utils;
     luaPath = "${./.}";
     forEachSystem = utils.eachSystem nixpkgs.lib.platforms.all;
@@ -62,7 +64,6 @@
     # later we will pass them into the builder, and the resulting pkgs set
     # will get passed to the categoryDefinitions and packageDefinitions
     # which follow this section.
-
     # this allows you to use ${pkgs.system} whenever you want in those sections
     # without fear.
     inherit (forEachSystem (system: let
@@ -115,7 +116,7 @@
           gopls
           texlab
           marksman
-          nil
+          nixd
           vscode-langservers-extracted
         ];
       };
@@ -130,7 +131,7 @@
           mini-nvim
 
           nvim-lspconfig
-          neodev-nvim
+          lazydev-nvim
 
           nvim-treesitter.withAllGrammars
 
@@ -279,6 +280,12 @@
       };
     };
 
+  } // {
+    # formatter
+    formatter = let
+        treefmtEval = (pkgs: treefmt-nix.lib.evalModule pkgs ./treefmt.nix);
+      in (pkgs: treefmtEval.${system}.config.build.wrapper);
+
   }) // {
 
     # these outputs will be NOT wrapped with ${system}
@@ -302,5 +309,4 @@
     inherit utils;
     inherit (utils) templates;
   };
-
 }
