@@ -38,7 +38,6 @@ keymap("n", "<leader>ah", "<cmd>-tabmove<cr>", opts)
 keymap("n", "<leader>al", "<cmd>+tabmove<cr>", opts)
 
 -- Indent
-for i = 1,8
-do
-  keymap("n", "<leader>t" .. i, "<cmd>set tabstop=" .. i .. "<cr><cmd>set shiftwidth=" .. i .. "<cr>", opts)
+for i = 1, 8 do
+	keymap("n", "<leader>t" .. i, "<cmd>set tabstop=" .. i .. "<cr><cmd>set shiftwidth=" .. i .. "<cr>", opts)
 end
