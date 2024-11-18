@@ -1,5 +1,8 @@
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
+local opts_desc = function(desc)
+  return { noremap = true, silent = true, desc = desc }
+end
 
 keymap("n", "<Space>", "", opts)
 vim.g.mapleader = " "
@@ -25,17 +28,17 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Quit
-keymap("n", "<leader>q", "<cmd>confirm q<cr>", opts)
+keymap("n", "<leader>q", "<cmd>confirm q<cr>", opts_desc("Quit"))
 
 -- No Highlight Search
-keymap("n", "<leader>h", "<cmd>nohlsearch<cr>", opts)
+keymap("n", "<leader>h", "<cmd>nohlsearch<cr>", opts_desc("NOHL"))
 
 -- Tabs
-keymap("n", "<leader>an", "<cmd>$tabnew<cr>", opts)
-keymap("n", "<leader>aN", "<cmd>tabnew %<cr>", opts)
-keymap("n", "<leader>ao", "<cmd>tabonly<cr>", opts)
-keymap("n", "<leader>ah", "<cmd>-tabmove<cr>", opts)
-keymap("n", "<leader>al", "<cmd>+tabmove<cr>", opts)
+keymap("n", "<leader>an", "<cmd>$tabnew<cr>", opts_desc("New Empty Tab"))
+keymap("n", "<leader>aN", "<cmd>tabnew %<cr>", opts_desc("New Tab"))
+keymap("n", "<leader>ao", "<cmd>tabonly<cr>", opts_desc("Only"))
+keymap("n", "<leader>ah", "<cmd>-tabmove<cr>", opts_desc("Move Left"))
+keymap("n", "<leader>al", "<cmd>+tabmove<cr>", opts_desc("Move Right"))
 
 -- Indent
 for i = 1, 8 do
