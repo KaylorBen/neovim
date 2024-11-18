@@ -48,7 +48,7 @@ miniclue.setup({
 -- mappings
 desc("n", "<leader>q", "Quit")
 desc("n", "<leader>h", "NOHL")
-desc("n", "<leader>e", "Files")
+-- desc("n", "<leader>e", "Files")
 
 -- tabs
 desc("n", "<leader>an", "New Empty Tab")

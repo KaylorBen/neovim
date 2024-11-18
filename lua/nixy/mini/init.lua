@@ -1,5 +1,5 @@
 require("mini.diff").setup()
-require("mini.files").setup()
+-- require("mini.files").setup() -- migrating to try oil.nvim
 require("mini.git").setup()
 require("mini.icons").setup()
 require("nixy.mini.hipatterns")

@@ -186,6 +186,8 @@
               harpoon
 
               presence-nvim
+
+              oil-nvim
             ];
           };
 
