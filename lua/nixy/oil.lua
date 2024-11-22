@@ -1,9 +1,8 @@
 require("oil").setup()
 
--- keybinds
-local keymap = vim.keymap.set
-local opts = function(desc)
-	return { noremap = true, silent = true, desc = desc }
-end
-
-keymap("n", "<leader>e", "<CMD>Oil<CR>", opts("Open parent directory"))
+vim.keymap.set(
+  "n",
+  "<leader>e",
+  "<CMD>Oil<CR>",
+  { noremap = true, silent = true, desc = "Open parent directory", }
+)

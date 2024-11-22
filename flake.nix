@@ -146,6 +146,7 @@
               lua-language-server
               typescript-language-server
               bash-language-server
+              omnisharp-roslyn
               zls
               rust-analyzer
               gopls

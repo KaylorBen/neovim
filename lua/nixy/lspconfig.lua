@@ -36,19 +36,20 @@ local lspconfig = require("lspconfig")
 local icons = require("nixy.icons")
 
 local servers = {
+	"autotools_ls",
+	"bashls",
 	"clangd",
 	"cmake",
-	"autotools_ls",
-	"lua_ls",
-	"ts_ls",
-	"bashls",
-	"zls",
-	"rust_analyzer",
+	"cssls",
 	"gopls",
-	"texlab",
+	"lua_ls",
 	"marksman",
 	"nixd",
-	"cssls",
+  "omnisharp",
+	"rust_analyzer",
+	"texlab",
+	"ts_ls",
+	"zls",
 }
 
 local default_diagnostic_config = {
@@ -91,7 +92,7 @@ for _, server in pairs(servers) do
 		capabilities = utils.common_capabilities(),
 	}
 
-	local require_ok, settings = pcall(require, "benix.lspsettings." .. server)
+	local require_ok, settings = pcall(require, "nixy.lspsettings." .. server)
 	if require_ok then
 		opts = vim.tbl_deep_extend("force", settings, opts)
 	end
