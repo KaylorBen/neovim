@@ -1,19 +1,9 @@
 -- tabspacing per language
+-- 4 tabwidth
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 	pattern = {
 		"*.c",
 		"*.h",
-	},
-	callback = function()
-		-- kernel style baby!!!
-		vim.opt.tabstop = 8
-		vim.opt.shiftwidth = 8
-		vim.expandtab = false
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-	pattern = {
 		"*.java",
 		"*.zig",
 		"*.rs",
@@ -21,6 +11,7 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 		"*.hpp",
 		"*.sh",
 		"*.go",
+		"*.js",
 	},
 	callback = function()
 		vim.opt.tabstop = 4
@@ -29,6 +20,19 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 	end,
 })
 
+-- 3 tabwidth
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+	pattern = {
+    "*.cs"
+	},
+	callback = function()
+		vim.opt.tabstop = 3
+		vim.opt.shiftwidth = 3
+		vim.expandtab = true
+	end,
+})
+
+-- 2 tabwidth
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 	pattern = {
 		"*.nix",
@@ -36,9 +40,7 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 		"*.html",
 		"*.css",
 		"*.json",
-		"*.js",
 		"*.ts",
-		"*.cs",
 		"*.tex",
 		"*.nu",
 	},
@@ -46,5 +48,14 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 		vim.opt.tabstop = 2
 		vim.opt.shiftwidth = 2
 		vim.expandtab = true
+	end,
+})
+
+-- highlight on yank
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "Highlihgt selection on yank",
+	pattern = "*",
+	callback = function()
+		vim.highlight.on_yank({ higroup = "IncSearch", timeout = 100 })
 	end,
 })

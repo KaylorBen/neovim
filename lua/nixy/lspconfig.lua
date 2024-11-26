@@ -45,7 +45,7 @@ local servers = {
 	"lua_ls",
 	"marksman",
 	"nixd",
-  "omnisharp",
+	"omnisharp",
 	"rust_analyzer",
 	"texlab",
 	"ts_ls",

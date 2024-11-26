@@ -153,6 +153,7 @@
               texlab
               marksman
               nixd
+              nixfmt-rfc-style
               vscode-langservers-extracted
             ];
           };
