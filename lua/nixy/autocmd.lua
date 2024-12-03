@@ -23,7 +23,7 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 -- 3 tabwidth
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 	pattern = {
-    "*.cs"
+		"*.cs",
 	},
 	callback = function()
 		vim.opt.tabstop = 3
