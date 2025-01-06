@@ -3,6 +3,9 @@ vim.api.nvim_set_hl(0, "CmpItemKindEmoji", { fg = "#FDE030" })
 
 local cmp = require("cmp")
 local luasnip = require("luasnip")
+
+luasnip.filetype_extend("javascriptreact", { "html" })
+
 require("luasnip.loaders.from_vscode").lazy_load()
 
 cmp.setup({
