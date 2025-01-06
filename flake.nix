@@ -150,6 +150,7 @@
               zls
               rust-analyzer
               gopls
+              svelte-language-server
               texlab
               marksman
               nixd

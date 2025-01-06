@@ -48,6 +48,7 @@ local servers = {
   "nushell",
 	"omnisharp",
 	"rust_analyzer",
+  "svelte",
 	"texlab",
 	"ts_ls",
 	"zls",
