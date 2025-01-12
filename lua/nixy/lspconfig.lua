@@ -36,6 +36,7 @@ local lspconfig = require("lspconfig")
 local icons = require("nixy.icons")
 
 local servers = {
+  "asm_lsp",
 	"autotools_ls",
 	"bashls",
 	"clangd",

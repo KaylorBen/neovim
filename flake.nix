@@ -140,6 +140,7 @@
           # this includes LSPs
           lspsAndRuntimeDeps = {
             general = with pkgs; [
+              asm-lsp
               clang-tools
               cmake-language-server
               autotools-language-server
