@@ -98,7 +98,7 @@ end
 if not configs.rustowlsp then
     configs.rustowlsp = {
         default_config = {
-            cmd = { 'rustowlsp' },
+            cmd = { 'cargo-owlsp' },
             root_dir = lspconfig.util.root_pattern('Cargo.toml', '.git'),
             filetypes = { 'rust' },
             on_attach = function(client, bufnr)
