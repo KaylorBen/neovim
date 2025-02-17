@@ -48,7 +48,6 @@ local servers = {
 	"nixd",
   "nushell",
 	"omnisharp",
-  "rustowlsp",
 	"rust_analyzer",
   "svelte",
 	"texlab",
@@ -106,11 +105,13 @@ for _, server in pairs(servers) do
 	end
 
 	if server == "zls" then
-		vim.cmd("let g:zig_fmt_autosave = 0")
+    vim.g.zig_fmt_autosave = 0
 	end
 
 	lspconfig[server].setup(opts)
 end
+
+lspconfig.rustowlsp.setup({})
 
 -- keybinds
 local keymap = vim.keymap.set

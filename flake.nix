@@ -134,10 +134,8 @@
           # However, they WILL be available to the shell
           # and neovim path when using nix develop
           propagatedBuildInputs = {
-            general =
-              with pkgs;
-              [
-              ];
+            general = with pkgs; [
+            ];
           };
 
           # lspsAndRuntimeDeps:
