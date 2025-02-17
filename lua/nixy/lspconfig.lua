@@ -48,6 +48,7 @@ local servers = {
 	"nixd",
   "nushell",
 	"omnisharp",
+  "rustowlsp",
 	"rust_analyzer",
   "svelte",
 	"texlab",

@@ -26,6 +26,7 @@
 
     treefmt-nix.url = "github:numtide/treefmt-nix";
 
+    rustowl.url = "github:kaylorben/rustowl-flake";
     plugins-rustowl = {
       url = "github:cordx56/rustowl";
       flake = false;
@@ -148,6 +149,7 @@
               asm-lsp
               clang-tools
               cmake-language-server
+              curl
               autotools-language-server
               lua-language-server
               typescript-language-server
@@ -162,6 +164,8 @@
               nixd
               nixfmt-rfc-style
               vscode-langservers-extracted
+
+              inputs.rustowl.packages.${system}.default
             ];
           };
 
