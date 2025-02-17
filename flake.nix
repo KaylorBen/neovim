@@ -26,6 +26,11 @@
 
     treefmt-nix.url = "github:numtide/treefmt-nix";
 
+    plugins-rustowl = {
+      url = "github:cordx56/rustowl";
+      flake = false;
+    };
+
     # neovim-nightly-overlay = {
     #   url = "github:nix-community/neovim-nightly-overlay";
     # };
@@ -162,7 +167,9 @@
 
           # This is for plugins that will load at startup without using packadd:
           startupPlugins = {
-            gitPlugins = with pkgs.neovimPlugins; [ ];
+            gitPlugins = with pkgs.neovimPlugins; [
+              rustowl
+            ];
             general = with pkgs.vimPlugins; [
               rose-pine
               tokyonight-nvim
