@@ -3,7 +3,7 @@
     "fenix": {
       "inputs": {
         "nixpkgs": [
-          "rustowl",
+          "rustowl-bin",
           "nixpkgs"
         ],
         "rust-analyzer-src": "rust-analyzer-src"
@@ -124,7 +124,7 @@
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs",
         "plugins-rustowl": "plugins-rustowl",
-        "rustowl": "rustowl",
+        "rustowl-bin": "rustowl-bin",
         "systems": "systems_2",
         "treefmt-nix": "treefmt-nix"
       }
@@ -146,7 +146,7 @@
         "type": "github"
       }
     },
-    "rustowl": {
+    "rustowl-bin": {
       "inputs": {
         "fenix": "fenix",
         "flake-utils": "flake-utils",
