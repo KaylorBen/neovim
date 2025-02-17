@@ -48,6 +48,7 @@ local servers = {
 	"nixd",
   "nushell",
 	"omnisharp",
+  "rustowlsp",
 	"rust_analyzer",
   "svelte",
 	"texlab",
@@ -89,6 +90,8 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { 
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
 require("lspconfig.ui.windows").default_options.border = "rounded"
 
+require("nixy.rustowlsp")
+
 for _, server in pairs(servers) do
 	local opts = {
 		on_attach = utils.on_attach,
@@ -110,8 +113,6 @@ for _, server in pairs(servers) do
 
 	lspconfig[server].setup(opts)
 end
-
-lspconfig.rustowlsp.setup({})
 
 -- keybinds
 local keymap = vim.keymap.set

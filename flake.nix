@@ -170,7 +170,6 @@
           # This is for plugins that will load at startup without using packadd:
           startupPlugins = {
             gitPlugins = with pkgs.neovimPlugins; [
-              rustowl
             ];
             general = with pkgs.vimPlugins; [
               rose-pine
