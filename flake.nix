@@ -139,23 +139,24 @@
           lspsAndRuntimeDeps = {
             general = with pkgs; [
               asm-lsp
+              autotools-language-server
               clang-tools
               cmake-language-server
               curl
-              autotools-language-server
+              glslls
+              gopls
               lua-language-server
               typescript-language-server
               bash-language-server
               omnisharp-roslyn
-              zls
               rust-analyzer
-              gopls
               svelte-language-server
               texlab
               marksman
               nixd
               nixfmt-rfc-style
               vscode-langservers-extracted
+              zls
             ];
           };
 

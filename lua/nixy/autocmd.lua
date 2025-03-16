@@ -12,6 +12,15 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 		"*.sh",
 		"*.go",
 		"*.js",
+
+    -- shaders
+    "*.glsl",
+    "*.vert",
+    "*.tect",
+    "*.tese",
+    "*.frag",
+    "*.geom",
+    "*.comp",
 	},
 	callback = function()
 		vim.opt.tabstop = 4
