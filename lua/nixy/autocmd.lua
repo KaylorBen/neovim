@@ -21,6 +21,7 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
     "*.frag",
     "*.geom",
     "*.comp",
+    "*.wgsl",
 	},
 	callback = function()
 		vim.opt.tabstop = 4

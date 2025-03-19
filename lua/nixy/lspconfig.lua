@@ -42,7 +42,6 @@ local servers = {
 	"clangd",
 	"cmake",
 	"cssls",
-  "glslls",
 	"gopls",
 	"lua_ls",
 	"marksman",
@@ -53,6 +52,7 @@ local servers = {
   "svelte",
 	"texlab",
 	"ts_ls",
+  "wgsl_analyzer",
 	"zls",
 }
 

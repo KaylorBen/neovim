@@ -143,7 +143,6 @@
               clang-tools
               cmake-language-server
               curl
-              glslls
               gopls
               lua-language-server
               typescript-language-server
@@ -156,6 +155,7 @@
               nixd
               nixfmt-rfc-style
               vscode-langservers-extracted
+              wgsl-analyzer
               zls
             ];
           };
