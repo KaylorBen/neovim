@@ -80,31 +80,19 @@
       # which follow this section.
       # this allows you to use ${pkgs.system} whenever you want in those sections
       # without fear.
-      inherit
-        (forEachSystem (
-          system:
-          let
-            # see :help nixCats.flake.outputs.overlays
-            dependencyOverlays = # (import ./overlays inputs) ++
-              [
-                # This overlay grabs all the inputs named in the format
-                # `plugins-<pluginName>`
-                # Once we add this overlay to our nixpkgs, we are able to
-                # use `pkgs.neovimPlugins`, which is a set of our plugins.
-                (utils.standardPluginOverlay inputs)
-                # add any flake overlays here.
-              ];
-            # these overlays will be wrapped with ${system}
-            # and we will call the same utils.eachSystem function
-            # later on to access them.
-
-          in
-          {
-            inherit dependencyOverlays;
-          }
-        ))
-        dependencyOverlays
-        ;
+      # see :help nixCats.flake.outputs.overlays
+      dependencyOverlays = # (import ./overlays inputs) ++
+        [
+          # This overlay grabs all the inputs named in the format
+          # `plugins-<pluginName>`
+          # Once we add this overlay to our nixpkgs, we are able to
+          # use `pkgs.neovimPlugins`, which is a set of our plugins.
+          (utils.standardPluginOverlay inputs)
+          # add any flake overlays here.
+        ];
+      # these overlays will be wrapped with ${system}
+      # and we will call the same utils.eachSystem function
+      # later on to access them.
       # see :help nixCats.flake.outputs.categories
       # and
       # :help nixCats.flake.outputs.categoryDefinitions.scheme

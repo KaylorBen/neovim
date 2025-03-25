@@ -52,7 +52,6 @@ local servers = {
   "svelte",
 	"texlab",
 	"ts_ls",
-  "wgsl_analyzer",
 	"zls",
 }
 
