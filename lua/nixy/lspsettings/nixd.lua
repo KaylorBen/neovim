@@ -10,10 +10,12 @@ return {
       },
       options = {
         nixos = {
-          expr = '(builtins.getFlake ("git+file://" + toString /home/ben/Development/dotfiles/.)).nixosConfigurations.siegmund.options',
+          expr =
+          '(builtins.getFlake ("git+file://" + toString /home/ben/Development/dotfiles/.)).nixosConfigurations.siegmund.options',
         },
         home_manager = {
-          expr = '(builtins.getFlake ("git+file://" + toString /home/ben/Development/dotfiles/.)).homeConfigurations.ben@siegmund.options',
+          expr =
+          '(builtins.getFlake ("git+file://" + toString /home/ben/Development/dotfiles/.)).homeConfigurations.ben@siegmund.options',
         },
       },
     }

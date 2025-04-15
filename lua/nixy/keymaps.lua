@@ -1,7 +1,7 @@
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 local opts_desc = function(desc)
-	return { noremap = true, silent = true, desc = desc }
+  return { noremap = true, silent = true, desc = desc }
 end
 
 keymap("n", "<Space>", "", opts)
@@ -42,5 +42,5 @@ keymap("n", "<leader>al", "<cmd>+tabmove<cr>", opts_desc("Move Right"))
 
 -- Indent
 for i = 1, 8 do
-	keymap("n", "<leader>t" .. i, "<cmd>set tabstop=" .. i .. "<cr><cmd>set shiftwidth=" .. i .. "<cr>", opts)
+  keymap("n", "<leader>t" .. i, "<cmd>set tabstop=" .. i .. "<cr><cmd>set shiftwidth=" .. i .. "<cr>", opts)
 end

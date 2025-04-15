@@ -1,6 +1,6 @@
 local keymap = vim.keymap.set
 local opts = function(desc)
-	return { noremap = true, silent = true, desc = desc }
+  return { noremap = true, silent = true, desc = desc }
 end
 
 -- files

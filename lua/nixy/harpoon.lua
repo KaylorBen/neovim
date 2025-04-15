@@ -1,12 +1,12 @@
 require("harpoon").setup({
-	save_on_toggle = false,
-	save_on_change = true,
+  save_on_toggle = false,
+  save_on_change = true,
 })
 
 -- keybinds
 local keymap = vim.keymap.set
 local opts = function(desc)
-	return { noremap = true, silent = true, desc = desc }
+  return { noremap = true, silent = true, desc = desc }
 end
 
 keymap("n", "<leader>Hm", "<cmd>lua require('harpoon.mark').add_file()<cr>", opts("Mark file"))
