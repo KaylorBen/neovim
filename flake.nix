@@ -145,6 +145,39 @@
               vscode-langservers-extracted
               wgsl-analyzer
               zls
+
+              # luau-lsp
+              (
+                stdenv.mkDerivation (finalAttrs: {
+                  pname = "luau-lsp";
+                  version = "1.42.1";
+
+                  src = fetchFromGitHub {
+                    owner = "JohnnyMorganz";
+                    repo = "luau-lsp";
+                    rev = finalAttrs.version;
+                    hash = "sha256-onOShtqHqbGRsFvnLUQ7xp3odSrJKpkq3X1+aWpwLeo=";
+                    fetchSubmodules = true;
+                  };
+
+                  nativeBuildInputs = [ cmake ]
+                    ++ lib.optional stdenv.isLinux gcc9;
+
+                  buildPhase = ''
+                    runHook preBuild
+                    cmake ..
+                    cmake --build . --target Luau.LanguageServer.CLI --config Release
+                    runHook postBuild
+                  '';
+
+                  installPhase = ''
+                    runHook preInstall
+                    mkdir -p $out/bin
+                    cp ./luau-lsp $out/bin/luau-lsp
+                    runHook postInstall
+                  '';
+                })
+              )
             ];
           };
 
