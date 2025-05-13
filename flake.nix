@@ -40,6 +40,10 @@
     # for specific tags, branches and commits, see:
     # https://nixos.org/manual/nix/stable/command-ref/new-cli/nix3-flake.html#examples
 
+    plugins-golf = {
+      flake = false;
+      url = "github:vuciv/golf";
+    };
   };
 
   # see :help nixCats.flake.outputs
@@ -184,6 +188,7 @@
           # This is for plugins that will load at startup without using packadd:
           startupPlugins = {
             gitPlugins = with pkgs.neovimPlugins; [
+              golf
             ];
             general = with pkgs.vimPlugins; [
               rose-pine
