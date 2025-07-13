@@ -39,7 +39,7 @@ local servers = {
   "asm_lsp",
   "autotools_ls",
   "bashls",
-  "clangd",
+  -- "clangd", lol
   "cmake",
   "cssls",
   "gopls",
