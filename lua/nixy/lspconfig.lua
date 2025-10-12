@@ -32,7 +32,6 @@ local utils = {
   end,
 }
 
-local lspconfig = require("lspconfig")
 local icons = require("nixy.icons")
 
 local servers = {
@@ -108,7 +107,7 @@ for _, server in pairs(servers) do
     vim.g.zig_fmt_autosave = 0
   end
 
-  lspconfig[server].setup(opts)
+  vim.lsp.enable(server)
 end
 
 -- keybinds
