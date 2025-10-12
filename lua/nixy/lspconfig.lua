@@ -44,7 +44,6 @@ local servers = {
   "cssls",
   "gopls",
   "lua_ls",
-  "luau_lsp",
   "marksman",
   "nixd",
   "nushell",
