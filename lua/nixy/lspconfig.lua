@@ -41,6 +41,7 @@ local servers = {
   -- "clangd", lol
   "cmake",
   "cssls",
+  "gdscript",
   "gopls",
   "lua_ls",
   "marksman",
