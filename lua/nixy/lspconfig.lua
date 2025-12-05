@@ -42,7 +42,7 @@ local servers = {
   "cmake",
   "cssls",
   "gdscript",
-  "gopls",
+  -- "gopls",
   "lua_ls",
   "marksman",
   "nixd",
