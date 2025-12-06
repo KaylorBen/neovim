@@ -35,7 +35,6 @@ local utils = {
 local icons = require("nixy.icons")
 
 local servers = {
-  "asm_lsp",
   "autotools_ls",
   "bashls",
   -- "clangd", lol
